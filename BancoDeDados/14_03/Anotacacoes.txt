@@ -1,0 +1,37 @@
+Tipo do Parametro:
+
+	IN = Parametro de Entrada, FUNCIONA COMO UMA CONSTANTE
+	OUT = Parametro de Saida, não é utilizado para criar as funções, FUNCIONA COMO UMA VARIÁVEL LOCAL
+	IN OUT : PARAMETRO DE ENTRADA E SAIDA
+
+	NECESSÁRIO GRANT 
+
+	Quando alguem ganha acesso a função ganha tbm acesso a tudo o que tiver dentro dela.
+		AuthId_CurrentUser bloqueia isso, somente quem tem aquele acesso pode realmente fazer o que tem dentro
+da função
+
+-----------------------------------------------------------------------------------------------------------
+	CREATE OR REPLACE FUNCTION NOME(PDEPTO IN NUMBER) RETURN
+	VARCHAR2 IS
+
+	NOME VARCHAR2(100);
+
+	BEGIN
+	
+	SELECT DNAME INTO NOME
+		FROM DEPT
+		WHERE DEPTNO = PDEPTO;
+	RETUN NOME;
+
+	EXCEPTION
+		WHEN NO_DATA_FOUN THEN
+			NOME:= 'DEPARTAMENTO INEXISTENTE'
+			RETURN NOME;
+	
+	END;
+-----------------------------------------------------------------------------------------------------------
+Entre o IS e o BEGIN é a area de declaração das variaveis
+
+->Overloading:
+	Quando tem quantidade de parametros ou tipo de parametros sendo chamados pela função e dependendo do tipo do
+parametro ele executa 'x' ação
