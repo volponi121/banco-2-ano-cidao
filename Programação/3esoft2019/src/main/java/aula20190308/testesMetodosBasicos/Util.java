@@ -6,20 +6,26 @@ public class Util {
 		return v1+v2;
 	}
 	
-	public static double triplo(double valor){
-		return valor*3;
+	public static double triplo(double valor) {
+		return 3 * valor;
 	}
 	
-	public static int contarPares(int[] arrayAuxiliar){
-		int nmrpares = 0;
+	public static int contarPares(int[] inteiros) {
+		int pares = 0;
 		
-		for(int contador = 0; contador < arrayAuxiliar.length; contador++) {
-			if(arrayAuxiliar[contador] % 2 == 0) {
-				nmrpares++;
+		//for (int valor : inteiros) {
+		for (int contador = 0; contador < inteiros.length; contador++) {
+			int valor = inteiros[contador];
+			if (valor%2==0) {
+				pares++;
 			}
 		}
-		return nmrpares;
+		return pares;
 	}
-	
-	
+
+	public static void seiLah(Pessoa p) {
+		p.setNome(p.getNome().toUpperCase());		
+	}
+
+
 }
