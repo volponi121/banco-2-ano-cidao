@@ -1,0 +1,83 @@
+Primal for Max então o Dual é Min
+
+o Nmr de restrições é o numero de variaveis do dual
+
+as constantes são oq acompanham as variaveis
+
+Ex:
+
+	Primal : Max Z = 2x1+3x2+X3
+
+	Restricões :
+		3x1+4x2+2x3<=10		---y1
+		2x1+6x2+x3 <=20		---y2
+		x1 -x2 -x3 <=30		---y3
+			     ^
+			      Constantes
+
+
+	Dual: Mín. D: 10y1+20y2+30y3
+
+Para as restrições dual é feito uma matriz transposta, ou seja, as linhas viram colunas
+
+	Restrições Dual: 
+	
+		3y1+2y2+y3 >= 2 --- Valor que vem da FO primal
+		4y1+6y2-y3 >= 3
+		2y1+y2-y3  >= 1
+
+
+Dual aplicado sob dual vira um Primal
+
+Sempre que a restrição for diferente do padrão, ou seja maximização ser '>=' e minimização ser '<=' então SEMPRE a variavel passa pro Dual sendo '<=0'
+
+EX:
+	
+
+Teoremas:
+	1: 'O dual do dual é o primal'
+	2: 'Se a restrição k do primal é igualdade, então a variaavel Yk do dual é sem restriçaõ de sinal'
+	3: 'Se a restrição k do primal, quando for maximização, é maior ou igual, então a variavel Yk do dual é não positiva '
+		Sempre que a restrição for diferente do padrão, ou seja maximização ser '>=' e minimização ser '<=' então SEMPRE a variavel passa pro Dual sendo '<=0'
+			
+			Primal
+			EX: Max : 2x1+3x2
+			    s.a : x1 -3x2 >= 9 ---DEVIDO ISTO
+
+			Dual
+				y1<=0
+	4: 'Se a variavel for livre no Primal, então passa pro Dual sendo igualdade'
+	5: 'Se a variavel for '<=' entao a restrição desta variavel vai ter sinal invertido ao MAX/MIN'
+
+
+
+Exercicio:
+	Primal:
+		max Z: x1 + 2x2 - 3x3 - 4x4
+
+		s.a  : x1  + 3x2 + 5x3 + x4  <= 7
+		       2x1 - x2  - 4x3 - 3x4 >= -6
+		       3x1 + 2x2 - x3  + 4x4 =  5
+		       x1,x4 livre
+		       x2<=0
+		       x3>=0
+
+	Dual:
+
+		min D: 7y1 - 6y2 + 5y3
+
+		s.a  :  y1 + 2y2 + 3y3 =  1
+			3y1- y2  + 2y3 <= 2
+			5y1- 4y2 - y3  >= -3
+			y1 - 3y2 + 4y3 = -4
+
+			y3 livre
+			y2<=0
+			y1>=0
+			
+
+
+
+
+
+
